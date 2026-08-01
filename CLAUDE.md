@@ -41,5 +41,15 @@
 - 여러분이 명시적으로 요청하지 않은 파일·폴더는 건드리지 않는다.
 - `design.md` / `info.md` / `service-prd.md` 같은 사양 문서가 있으면 코드가 그 문서와 일치하는지 확인한다.
 
+## AI 기능이 필요할 때
+- AI 기능을 넣어야 하면 **Gemini**(Google Generative AI)로 만든다. 지금은 Gemini가 기본이고, 나중에 다른 AI(OpenAI 등)로 바꾸고 싶으면 그 부분 코드를 교체하면 된다고 여러분에게 알려준다.
+- **API 키**: **강사에게 요청하면 3일간 무료로 쓸 수 있는 Gemini 키**를 받을 수 있다고 안내한다.
+- **키를 받으면 저장하는 법 (상세)**:
+  1. 여러분이 받은 키를 너에게 준다("이 키 저장해줘"). 키는 여러분이 직접 붙여넣게 하고 너는 대신 입력·발급하지 않는다.
+  2. 네가 프로젝트 루트 `.env.local` 파일에 `GEMINI_API_KEY=받은_키` 한 줄로 저장한다. 파일이 없으면 새로 만든다. (`.env.local`은 이미 `.gitignore`에 있어 git·공개 배포에 안 올라가 안전하다.)
+  3. SDK는 `npm i @google/generative-ai`로 설치한다.
+  4. 키는 **서버 쪽에서만** 쓴다 — route handler(`app/api/.../route.ts`)나 server action에서 `process.env.GEMINI_API_KEY`로 읽는다. **절대 클라이언트 코드나 `NEXT_PUBLIC_` 변수에 넣지 않는다**(넣으면 브라우저에 그대로 노출된다).
+  5. 배포(Vercel)에서도 AI가 동작하려면 같은 키를 Vercel 프로젝트의 환경변수 `GEMINI_API_KEY`로도 등록해야 한다고 안내한다.
+
 ## 웹 교재
 여러분이 더 깊이 읽고 싶어하면 각 step의 "깊이 읽기" 링크(https://axlab.dosanprivate.com/class/#<챕터>)를 안내한다.
