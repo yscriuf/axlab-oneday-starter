@@ -38,6 +38,7 @@
   2. italic(기울임)은 쓰지 마 — 한글은 깨진다. 강조는 font-weight나 색으로.
   3. 색·간격·radius·그림자·레이아웃 톤은 design.md를 따르고, 폰트·italic만 이 규칙으로 덮어쓴다.
 - **Google Sheets·Google Forms를 가져오거나 연동**하려 하면 `clasp`(Apps Script CLI)로 진행하도록 안내한다 (`npm i -g @google/clasp` → `clasp login`).
+  - clasp 처음 사용 시 **권한 문제**가 뜨면: clasp에는 기본 OAuth 클라이언트가 내장돼 있어, 설치 후 https://script.google.com/home/usersettings 에서 **Apps Script API 토글만 켜면** 바로 쓸 수 있다. (GCP 콘솔이 아니라 Apps Script 사용자 설정 페이지라 클릭 한 번이면 끝.)
 - 여러분이 명시적으로 요청하지 않은 파일·폴더는 건드리지 않는다.
 - `design.md` / `info.md` / `service-prd.md` 같은 사양 문서가 있으면 코드가 그 문서와 일치하는지 확인한다.
 
