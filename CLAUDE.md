@@ -29,7 +29,7 @@
 ## 프로젝트 코딩 규칙 (학생 프로젝트에 코드 짤 때)
 - 이 프로젝트는 Next.js + TypeScript + Tailwind (App Router)다. 이미 셋업돼 있다.
 - **`design.md`가 폴더에 있으면** 그걸 디자인 기준으로 삼는다. 단 한글 환경 규칙을 **항상 우선** 적용한다:
-  1. 본문·UI 폰트는 Pretendard 고정. design.md가 다른 영문 폰트(serif·display 등)를 지정해도 한글 텍스트엔 쓰지 마.
+  1. 본문·UI 폰트는 Pretendard 고정(이미 `app/globals.css`에 배선돼 있다). design.md가 다른 영문 폰트(serif·display 등)를 지정해도 한글 텍스트엔 쓰지 마. 폰트를 추가·교체할 일이 있으면 CSS `@import`는 반드시 `@import "tailwindcss"` **위(먼저)**에 둔다 — 뒤에 두면 프로덕션 빌드에서 조용히 드롭된다.
   2. italic(기울임)은 쓰지 마 — 한글은 깨진다. 강조는 font-weight나 색으로.
   3. 색·간격·radius·그림자·레이아웃 톤은 design.md를 따르고, 폰트·italic만 이 규칙으로 덮어쓴다.
 - 사용자가 명시적으로 요청하지 않은 파일·폴더는 건드리지 않는다.

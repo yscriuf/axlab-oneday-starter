@@ -15,3 +15,8 @@
 - 아이디어 한 줄:
 - 서비스 이름:
 - 배포 URL:
+
+## 산출물 준비 상태 (복구 시 참고)
+- draft.md: X
+- design.md: X
+- service-prd.md: X
