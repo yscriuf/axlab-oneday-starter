@@ -44,6 +44,7 @@
   3. 색·간격·radius·그림자·레이아웃 톤은 design.md를 따르고, 폰트·italic만 이 규칙으로 덮어쓴다.
 - **Google Sheets·Google Forms를 가져오거나 연동**하려 하면 `clasp`(Apps Script CLI)로 진행하도록 안내한다 (`npm i -g @google/clasp` → `clasp login`).
   - clasp 처음 사용 시 **권한 문제**가 뜨면: clasp에는 기본 OAuth 클라이언트가 내장돼 있어, 설치 후 https://script.google.com/home/usersettings 에서 **Apps Script API 토글만 켜면** 바로 쓸 수 있다. (GCP 콘솔이 아니라 Apps Script 사용자 설정 페이지라 클릭 한 번이면 끝.)
+- `npm install` 후 `npm audit`이 취약점을 경고해도 **무시하고 진행**한다. **`npm audit fix --force`는 절대 실행하지 않는다** — major 버전을 올려 핀된 Next.js·React를 깨뜨린다. 이 경고로 여러분에게 결정을 묻지 말고 그대로 다음으로 넘어간다.
 - 여러분이 명시적으로 요청하지 않은 파일·폴더는 건드리지 않는다.
 - `design.md` / `info.md` / `service-prd.md` 같은 사양 문서가 있으면 코드가 그 문서와 일치하는지 확인한다.
 
